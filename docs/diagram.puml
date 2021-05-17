@@ -1,0 +1,28 @@
+@startuml
+actor User
+
+App --> Data: load input file
+App --> Model: create model
+App --> Loader: start
+App --> UI: load
+
+UI --> User : observe animation
+
+loop over Data 
+   Loader --> Service: thumbnail url
+   Service --> Loader: download
+   Loader --> Data: store
+end
+
+Loader --> Model: handle results
+Model --> UI: change status
+UI --> User: observe thumbnails
+
+loop user interaction
+User --> UI: click thumbnail
+UI --> Model: get a photo
+Model --> Service: photo url
+Service --> Model: download
+UI --> User: observe photo
+end
+@enduml

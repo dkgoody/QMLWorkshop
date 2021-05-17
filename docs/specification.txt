@@ -1,0 +1,31 @@
+Application gives an overview and4 a detail view of photos listed in a json file.
+
+Input: json file with array of photo data: albumId, id, title, url, thumbnailUrl
+(See example photos.json)
+
+
+0. Start application with json file as an agrument
+0a. Ask user to select an input file inside application
+0b. Make an application for one specific json file (Add to resources?) 
+
+Flow:
+
+1. Show "Loading ..." animation
+2. Load  json file info into a model 
+3. Load all thumbnails urls 
+4. Switch to show grid with photos, sorted by album
+5. Mouse on a photo shows photo title tooltip
+6. Click on a photo opens a dialog with its full version
+7. User should be able to open full version of several photos at the same time 
+8. When application closes, all downloaded info is deleted.
+
+
+Questions:
+
+1. Is there a standard loading animation?
+2. Add interrupt option for long loading operation?
+3. Is there a standard error handling? message dialog?
+4. To add two-level view (Albums -> Photos) requires Albums reference
+
+
+
